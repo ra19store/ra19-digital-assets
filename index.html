@@ -3,278 +3,36 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RA19 Digital Assets — Premium Aviation Audit Templates &amp; Toolkits</title>
-<meta name="description" content="Your premium vault for high-performance digital assets. Ready-to-use aviation audit packages for ICAO / USOAP CMA, IATA IOSA, EASA, FAA and CAAP compliance." />
+<title>RA19 Digital Assets — Premium Templates &amp; Digital Toolkits</title>
+<meta name="description" content="Your premium vault for high-performance digital assets. Ready-to-use aviation audit packages and digital toolkits engineered to streamline your workflow." />
 <link rel="icon" type="image/png" href="store-assets/logo.png" />
 <meta property="og:title" content="RA19 Digital Assets" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="Your premium vault for high-performance digital assets across all industries. Stop starting from scratch—get ready-to-use templates, creative tools, and digital solutions engineered to streamline your workflow and accelerate your growth today." />
+<meta property="og:description" content="Your premium vault for high-performance digital assets across all industries. Stop starting from scratch." />
 <meta property="og:image" content="store-assets/og-cover.png" />
-<style>
-  :root{
-    --bg:#07060d;
-    --bg-2:#0d0b18;
-    --card:#12101f;
-    --card-2:#171430;
-    --text:#f4f2ff;
-    --muted:#a29dc4;
-    --line:rgba(255,255,255,.09);
-    --g1:#7c3aed;
-    --g2:#ec4899;
-    --g3:#22d3ee;
-    --g4:#f59e0b;
-    --radius:20px;
-    --max:1160px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 22px}
-
-  .grad-text{
-    background:linear-gradient(100deg,var(--g3),var(--g1) 45%,var(--g2));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .blob{
-    position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;pointer-events:none;z-index:0;
-  }
-
-  /* nav */
-  header.nav{
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(14px);
-    background:rgba(7,6,13,.72);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .logo{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
-  .logo img{width:34px;height:34px;border-radius:9px;object-fit:cover;box-shadow:0 6px 20px rgba(124,58,237,.5)}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{color:var(--muted);font-size:.93rem;font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:#fff}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-weight:700;font-size:.95rem;border:0;cursor:pointer;
-    padding:13px 26px;border-radius:999px;transition:transform .18s,box-shadow .18s,filter .18s;
-    font-family:inherit;
-  }
-  .btn-grad{
-    background:linear-gradient(100deg,var(--g3),var(--g1) 50%,var(--g2));
-    background-size:180% 180%;
-    color:#0a0714;
-    box-shadow:0 10px 34px rgba(124,58,237,.45);
-    animation:shift 7s ease infinite;
-  }
-  .btn-grad:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(236,72,153,.5)}
-  @keyframes shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-  .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid var(--line)}
-  .btn-ghost:hover{background:rgba(255,255,255,.11)}
-  .btn-sm{padding:10px 20px;font-size:.88rem}
-  .nav .btn{display:none}
-  @media(min-width:820px){.nav .btn{display:inline-flex}}
-
-  /* hero */
-  .hero{position:relative;padding:96px 0 84px;overflow:hidden}
-  .blob-1{width:560px;height:560px;background:#7c3aed;top:-220px;left:-160px}
-  .blob-2{width:480px;height:480px;background:#ec4899;top:40px;right:-180px}
-  .blob-3{width:420px;height:420px;background:#22d3ee;bottom:-260px;left:35%;opacity:.3}
-  .hero-in{position:relative;z-index:1;text-align:center;max-width:860px;margin:0 auto}
-  .pill{
-    display:inline-flex;align-items:center;gap:9px;
-    padding:7px 16px;border-radius:999px;font-size:.8rem;font-weight:600;
-    background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--muted);
-    letter-spacing:.04em;text-transform:uppercase;
-  }
-  .dot{width:7px;height:7px;border-radius:50%;background:#22d3ee;box-shadow:0 0 10px #22d3ee}
-  h1{
-    font-size:clamp(2.5rem,7vw,4.4rem);
-    line-height:1.05;font-weight:900;letter-spacing:-.04em;
-    margin:26px 0 22px;
-  }
-  .hero p.lead{font-size:clamp(1rem,2.2vw,1.18rem);color:var(--muted);max-width:660px;margin:0 auto 36px}
-  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .trust{
-    display:flex;gap:26px;justify-content:center;flex-wrap:wrap;
-    margin-top:44px;color:var(--muted);font-size:.87rem;
-  }
-  .trust span{display:flex;align-items:center;gap:8px}
-  .check{color:#22d3ee;font-weight:800}
-
-  /* marquee */
-  .marquee{
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    padding:16px 0;overflow:hidden;background:var(--bg-2);
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-  }
-  .marquee-track{display:flex;gap:52px;width:max-content;animation:scroll 30s linear infinite}
-  .marquee-track span{
-    font-weight:800;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;
-    color:rgba(255,255,255,.34);white-space:nowrap;
-  }
-  @keyframes scroll{to{transform:translateX(-50%)}}
-
-  /* sections */
-  section{position:relative;padding:88px 0}
-  .sec-head{text-align:center;max-width:680px;margin:0 auto 54px}
-  .sec-head h2{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;letter-spacing:-.03em;line-height:1.1}
-  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.03rem}
-  .eyebrow{
-    display:block;font-size:.78rem;font-weight:800;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--g3);margin-bottom:14px;
-  }
-
-  /* product grid */
-  .grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
-  .card{
-    position:relative;display:flex;flex-direction:column;
-    background:linear-gradient(160deg,var(--card),var(--card-2));
-    border:1px solid var(--line);border-radius:var(--radius);
-    overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;
-  }
-  .card:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.22);box-shadow:0 26px 60px rgba(0,0,0,.55)}
-  .card::before{
-    content:"";position:absolute;inset:0 0 auto 0;height:3px;
-    background:linear-gradient(90deg,var(--c1,#22d3ee),var(--c2,#ec4899));
-  }
-  .thumb{
-    position:relative;overflow:hidden;height:180px;
-    background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.14),transparent 60%),linear-gradient(140deg,var(--c1,#22d3ee),var(--c2,#ec4899));
-  }
-  .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-  .card:hover .thumb img{transform:scale(1.05)}
-  .thumb::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 50%,rgba(10,8,20,.72));
-  }
-  .tag{
-    position:absolute;top:13px;left:13px;z-index:2;
-    padding:5px 12px;border-radius:999px;font-size:.7rem;font-weight:800;
-    letter-spacing:.09em;text-transform:uppercase;
-    background:rgba(7,6,13,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16);
-  }
-  .badge{
-    position:absolute;top:13px;right:13px;z-index:2;
-    padding:5px 11px;border-radius:999px;font-size:.7rem;font-weight:800;
-    background:linear-gradient(100deg,var(--g4),#ef4444);color:#150a02;
-  }
-  .card-body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
-  .card-body h3{font-size:1.12rem;font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-bottom:8px}
-  .card-body .desc{color:var(--muted);font-size:.92rem;flex:1}
-  .feat{list-style:none;margin:16px 0 18px;display:flex;flex-direction:column;gap:7px}
-  .feat li{font-size:.85rem;color:#cfc9ee;display:flex;gap:9px;align-items:flex-start}
-  .feat li::before{content:"✦";color:var(--g3);font-size:.8rem;line-height:1.5}
-  .price-row{
-    display:flex;align-items:baseline;justify-content:space-between;
-    padding-top:16px;border-top:1px dashed rgba(255,255,255,.14);margin-bottom:16px;
-  }
-  .price{font-size:1.75rem;font-weight:900;letter-spacing:-.03em}
-  .price small{font-size:.75rem;font-weight:600;color:var(--muted);margin-left:6px}
-  .card .btn{width:100%}
-
-  /* featured complete package */
-  .bundle{
-    position:relative;overflow:hidden;border-radius:26px;
-    border:1px solid rgba(255,255,255,.14);
-    background:linear-gradient(120deg,rgba(34,211,238,.16),rgba(124,58,237,.2) 45%,rgba(236,72,153,.2));
-    padding:0;display:grid;gap:0;grid-template-columns:1fr;
-  }
-  @media(min-width:860px){.bundle{grid-template-columns:1fr 1.25fr}}
-  .bundle-img{min-height:260px;position:relative;overflow:hidden}
-  .bundle-img img{width:100%;height:100%;object-fit:cover}
-  .bundle-img::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(90deg,transparent 40%,rgba(13,11,24,.9));
-  }
-  @media(max-width:859px){
-    .bundle-img::after{background:linear-gradient(180deg,transparent 40%,rgba(13,11,24,.95))}
-  }
-  .bundle-body{padding:44px 40px}
-  .bundle-body h3{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.12}
-  .bundle-body p{color:#d7d2f2;margin-top:14px;font-size:.98rem}
-  .bundle .feat{margin:20px 0 24px}
-  .bundle-cta{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-  .bundle-cta .price{font-size:2.6rem}
-  .old-price{font-size:1rem;color:var(--muted);text-decoration:line-through;font-weight:600}
-
-  /* faq */
-  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:13px}
-  details{
-    background:var(--card);border:1px solid var(--line);border-radius:15px;
-    padding:0 22px;transition:border-color .2s;
-  }
-  details[open]{border-color:rgba(124,58,237,.55);background:var(--card-2)}
-  summary{
-    cursor:pointer;list-style:none;padding:19px 0;font-weight:700;font-size:1rem;
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
-  }
-  summary::-webkit-details-marker{display:none}
-  summary::after{
-    content:"+";font-size:1.5rem;color:var(--g3);transition:transform .25s;line-height:1;
-  }
-  details[open] summary::after{transform:rotate(45deg)}
-  details p{color:var(--muted);padding-bottom:20px;font-size:.95rem}
-
-  /* final cta */
-  .final{text-align:center;position:relative;overflow:hidden}
-  .final h2{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;letter-spacing:-.04em;line-height:1.06}
-  .final p{color:var(--muted);max-width:520px;margin:18px auto 32px}
-
-  /* footer */
-  footer{border-top:1px solid var(--line);padding:40px 0;background:var(--bg-2)}
-  .foot{display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center}
-  @media(min-width:760px){.foot{flex-direction:row;justify-content:space-between;text-align:left}}
-  footer small{color:var(--muted);font-size:.85rem}
-  .foot-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
-  .foot-links a{color:var(--muted);font-size:.87rem;transition:color .2s}
-  .foot-links a:hover{color:#fff}
-
-  /* toast */
-  #toast{
-    position:fixed;left:50%;bottom:26px;transform:translate(-50%,140%);
-    background:var(--card-2);border:1px solid rgba(124,58,237,.6);
-    color:#fff;padding:13px 22px;border-radius:12px;font-size:.9rem;z-index:99;
-    box-shadow:0 18px 46px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.9,.3,1.3);
-    max-width:92vw;text-align:center;
-  }
-  #toast.show{transform:translate(-50%,0)}
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-in">
-    <a href="#" class="logo"><img src="store-assets/logo.png" alt="RA19 Digital Assets" /> RA19 Digital Assets</a>
-    <nav class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#complete">Complete package</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a href="#products" class="btn btn-grad btn-sm">Browse products</a>
+    <a href="index.html" class="logo"><img src="store-assets/logo.png" alt="RA19 Digital Assets" /> <span id="brandName">RA19 Digital Assets</span></a>
+    <nav class="nav-links" id="navLinks"></nav>
+    <a href="#catalog" class="btn btn-grad btn-sm">Browse products</a>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
 <section class="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
   <div class="wrap hero-in">
-    <span class="pill"><span class="dot"></span> Ready-to-use templates, creative tools &amp; digital solutions</span>
-    <h1>Your premium vault for <span class="grad-text">high-performance digital assets.</span></h1>
-    <p class="lead">Stop starting from scratch. Get professionally engineered templates and toolkits — starting with aviation annual audit packages for ICAO, IOSA, MRO and AOC compliance.</p>
+    <span class="pill"><span class="dot"></span> <span id="heroTag"></span></span>
+    <h1 id="heroHeadline"></h1>
+    <p class="lead" id="heroIntro"></p>
     <div class="hero-cta">
-      <a href="#products" class="btn btn-grad">Browse the audit packages</a>
-      <a href="#complete" class="btn btn-ghost">Get the complete toolkit →</a>
+      <a href="#catalog" class="btn btn-grad">Browse the products</a>
+      <a href="#featured" class="btn btn-ghost">See featured →</a>
     </div>
     <div class="trust">
       <span><b class="check">✓</b> Instant digital delivery</span>
@@ -285,222 +43,165 @@
   </div>
 </section>
 
-<div class="marquee">
-  <div class="marquee-track">
-    <span>ICAO / USOAP CMA</span><span>IATA IOSA</span><span>EASA Part-145</span><span>FAA Part-145</span><span>CAAP</span><span>MRO &amp; AOC audits</span>
-    <span>ICAO / USOAP CMA</span><span>IATA IOSA</span><span>EASA Part-145</span><span>FAA Part-145</span><span>CAAP</span><span>MRO &amp; AOC audits</span>
-  </div>
-</div>
+<div class="marquee"><div class="marquee-track" id="marquee"></div></div>
 
-<!-- ============ PRODUCTS ============ -->
-<section id="products">
+<section id="featured" style="display:none">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Aviation Annual Audit Packages</span>
-      <h2>ICAO / IOSA / MRO &amp; AOC <span class="grad-text">compliance kits</span></h2>
-      <p>Complete, editable annual audit frameworks mapped to the regulators that matter. Pay once, download instantly, customize to your organization.</p>
+      <span class="eyebrow">Featured</span>
+      <h2>Start <span class="grad-text">here</span></h2>
     </div>
-    <div class="grid" id="grid"></div>
+    <div id="featuredWrap"></div>
   </div>
 </section>
 
-<!-- ============ COMPLETE PACKAGE ============ -->
-<section id="complete">
+<section id="catalog">
   <div class="wrap">
-    <div class="bundle">
-      <div class="bundle-img">
-        <img src="store-assets/product-complete.png" alt="Aviation Annual Audit Package — Complete" />
-      </div>
-      <div class="bundle-body">
-        <span class="eyebrow">Best value — three frameworks in one</span>
-        <h3>Aviation Annual Audit Package — <span class="grad-text">Complete</span></h3>
-        <p>ICAO + IOSA + MRO/AOC. Three complete audit frameworks, one toolkit, zero starting from scratch. If you work in aviation quality, safety or compliance, you already know what the annual audit demand looks like — this is the shortcut.</p>
-        <ul class="feat">
-          <li>ICAO / USOAP CMA State CAA audit templates, mapped to the 8 Critical Elements</li>
-          <li>IATA IOSA operator &amp; MRO annual audit templates</li>
-          <li>EASA Part-145, FAA Part-145 &amp; CAAP MRO/AOC audit systems</li>
-          <li>Everything fully editable in Word &amp; Excel</li>
-        </ul>
-        <div class="bundle-cta">
-          <div>
-            <span class="old-price">$597+</span>
-            <span class="price grad-text">$399<small style="font-size:1rem">+ one-time</small></span>
-          </div>
-          <a href="https://creem.io/payment/prod_REPLACE_COMPLETE" class="btn btn-grad" data-checkout="Complete package">Get the complete package →</a>
-        </div>
-      </div>
+    <div class="sec-head">
+      <span class="eyebrow">The catalog</span>
+      <h2>Pick your <span class="grad-text">weapon</span></h2>
+      <p id="catalogIntro"></p>
     </div>
+    <div id="categorySections"></div>
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Questions</span>
       <h2>Everything else</h2>
     </div>
-    <div class="faq">
-      <details open>
-        <summary>What's inside each audit package?</summary>
-        <p>A complete, editable annual audit framework: audit checklists, planning and scheduling templates, finding/NC trackers, report templates and closing-loop procedures — all mapped to the relevant regulator requirements (ICAO USOAP CMA Critical Elements, IATA IOSA, EASA Part-145, FAA Part-145 or CAAP, depending on the package).</p>
-      </details>
-      <details>
-        <summary>Which formats do I get?</summary>
-        <p>Microsoft Word and Excel files. Everything is fully editable — rebrand it, translate it, extend it to your own organization. No specialized software required.</p>
-      </details>
-      <details>
-        <summary>How do I receive my files after paying?</summary>
-        <p>Checkout is handled by Creem. As soon as payment confirms you're redirected to your download page, and a receipt with your links lands in your inbox. Delivery is instant — no waiting on emails from me.</p>
-      </details>
-      <details>
-        <summary>Which payment methods can I use?</summary>
-        <p>Visa, Mastercard, Amex, PayPal, Apple Pay and Google Pay, plus local methods depending on your country. All prices display in your local currency at checkout where available.</p>
-      </details>
-      <details>
-        <summary>Do you offer refunds?</summary>
-        <p>Digital goods are delivered instantly, so refunds are handled case by case. If a package genuinely doesn't match its description, contact me within 14 days and I'll make it right.</p>
-      </details>
-      <details>
-        <summary>Can I use these templates inside my organization?</summary>
-        <p>Yes — a purchase includes a commercial license for use within your organization (unlimited internal users). You may not resell, redistribute or publicly share the files themselves.</p>
-      </details>
-    </div>
+    <div class="faq" id="faqList"></div>
   </div>
 </section>
 
-<!-- ============ FINAL CTA ============ -->
 <section class="final">
   <div class="blob blob-2" style="left:-140px;right:auto;top:10%"></div>
   <div class="blob blob-1" style="right:-180px;left:auto;background:#22d3ee"></div>
   <div class="wrap" style="position:relative;z-index:1">
-    <h2>Stop starting from scratch.<br /><span class="grad-text">Ship your next audit ready.</span></h2>
-    <p>One click to checkout, instant access, and a complete audit framework on your desk today.</p>
-    <a href="#products" class="btn btn-grad">Browse the packages</a>
+    <h2>Stop starting from scratch.<br /><span class="grad-text">Ship faster today.</span></h2>
+    <p>One click to checkout, instant access, and a professional toolkit on your desk today.</p>
+    <a href="#catalog" class="btn btn-grad btn-lg">Browse the products</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot">
-    <small>© <span id="year"></span> RA19 Digital Assets. All rights reserved.</small>
+    <small>© <span id="year"></span> <span id="brandFoot">RA19 Digital Assets</span>. All rights reserved.</small>
     <div class="foot-links">
       <a href="#">Terms</a>
       <a href="#">Privacy</a>
       <a href="#">Refund policy</a>
-      <a href="mailto:support@example.com">Support</a>
+      <a id="supportLink" href="#">Support</a>
     </div>
     <small>Payments powered by <b>Creem</b></small>
   </div>
 </footer>
 
-<div id="toast"></div>
-
+<script src="products.js"></script>
+<script src="app.js"></script>
 <script>
-/* =====================================================================
-   ⬇⬇⬇  CONNECT TO CREEM — EDIT ONLY THESE LINKS  ⬇⬇⬇
-   In your Creem dashboard: create a product for each package, then
-   Products → Share → copy the payment link (prod_xxxxx) and paste it
-   below. Until then, buttons show a "link not set" notice instead of
-   navigating.
-   ===================================================================== */
-const STORE = {
-  products: [
-    {
-      id: "mro-aoc",
-      name: "Aviation Annual Audit Package — MRO & AOC (EASA / FAA / CAAP)",
-      tag: "MRO & AOC",
-      image: "store-assets/product-mro-aoc.png",
-      price: "$199",
-      badge: "",
-      desc: "Three regulator-specific audit systems in one toolkit. MRO and Air Operator Certificate annual audits under EASA Part-145, FAA Part-145 and CAAP requirements.",
-      features: ["EASA / FAA / CAAP coverage", "MRO + AOC annual audits", "Editable Word & Excel templates"],
-      colors: ["#f59e0b", "#ef4444"],
-      checkout: "https://creem.io/payment/prod_REPLACE_MRO_AOC"
-    },
-    {
-      id: "iosa",
-      name: "Aviation Annual Audit Package — IOSA",
-      tag: "IATA IOSA",
-      image: "store-assets/product-iosa.png",
-      price: "$149",
-      badge: "",
-      desc: "Operator & MRO annual audit templates aligned to the IATA IOSA framework. Prepare for and maintain IOSA registration with a complete, editable annual audit system.",
-      features: ["Aligned to IATA IOSA standards", "Operator & MRO editions", "Finding & NC tracking built in"],
-      colors: ["#7c3aed", "#ec4899"],
-      checkout: "https://creem.io/payment/prod_REPLACE_IOSA"
-    },
-    {
-      id: "icao-usoap",
-      name: "Aviation Annual Audit Package — ICAO / USOAP CMA",
-      tag: "ICAO / USOAP",
-      image: "store-assets/product-icao-usoap.png",
-      price: "$149",
-      badge: "",
-      desc: "State CAA annual audit templates mapped to the 8 Critical Elements. Prepare your civil aviation authority for ICAO USOAP CMA with a complete, editable framework.",
-      features: ["Mapped to the 8 Critical Elements", "State CAA audit scope", "Full report template set"],
-      colors: ["#22d3ee", "#3b82f6"],
-      checkout: "https://creem.io/payment/prod_REPLACE_ICAO_USOAP"
-    }
-  ],
-  complete: {
-    checkout: "https://creem.io/payment/prod_REPLACE_COMPLETE"
+(function () {
+  var b = STORE.brand;
+  document.title = b.name + " — Premium Templates & Digital Toolkits";
+  document.getElementById("brandName").textContent = b.name;
+  document.getElementById("brandFoot").textContent = b.name;
+  document.getElementById("year").textContent = year();
+  document.getElementById("heroTag").textContent = b.tagline;
+  document.getElementById("heroIntro").textContent = b.intro;
+  document.getElementById("catalogIntro").textContent =
+    "Every product is a one-time purchase. Pay once, download instantly, keep it forever.";
+  var support = document.getElementById("supportLink");
+  support.href = "mailto:" + b.supportEmail;
+  support.textContent = "Support";
+
+  var h1 = document.getElementById("heroHeadline");
+  h1.innerHTML = escapeHtml(b.headline[0]) + "<br /><span class=\"grad-text\">" + escapeHtml(b.headline[1] || "") + "</span>";
+
+  /* nav */
+  var nav = document.getElementById("navLinks");
+  var html = "";
+  if (featuredProducts().length) html += '<a href="#featured">Featured</a>';
+  if (STORE.categories.length > 1) {
+    html += '<div class="dropdown"><a href="#catalog">Products</a><div class="dropdown-menu">';
+    STORE.categories.forEach(function (c) {
+      html += '<a href="#cat-' + c.id + '">' + escapeHtml(c.name) + "</a>";
+    });
+    html += "</div></div>";
+  } else if (STORE.categories.length === 1) {
+    html += '<a href="#cat-' + STORE.categories[0].id + '">' + escapeHtml(STORE.categories[0].short || "Products") + "</a>";
   }
-};
+  html += '<a href="#faq">FAQ</a>';
+  nav.innerHTML = html;
 
-/* ---------------- rendering ---------------- */
-const $ = (s) => document.querySelector(s);
-const grid = $("#grid");
-const UNSET = "prod_REPLACE";
-
-$("#year").textContent = new Date().getFullYear();
-const completeBtn = document.querySelector('[data-checkout="Complete package"]');
-completeBtn.href = STORE.complete.checkout;
-completeBtn.addEventListener("click", (e) => guardLink(e, STORE.complete.checkout, "Complete package"));
-
-function render() {
-  grid.innerHTML = "";
-  STORE.products.forEach((p) => {
-    const el = document.createElement("article");
-    el.className = "card";
-    el.style.setProperty("--c1", p.colors[0]);
-    el.style.setProperty("--c2", p.colors[1]);
-    el.innerHTML = `
-      <div class="thumb">
-        <span class="tag">${p.tag}</span>
-        ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
-        <img src="${p.image}" alt="${p.name}" loading="lazy" />
-      </div>
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <p class="desc">${p.desc}</p>
-        <ul class="feat">${p.features.map((f) => `<li>${f}</li>`).join("")}</ul>
-        <div class="price-row">
-          <span class="price">${p.price}<small>+ one-time</small></span>
-        </div>
-        <a class="btn btn-grad" href="${p.checkout}">Buy now →</a>
-      </div>`;
-    el.querySelector("a").addEventListener("click", (e) => guardLink(e, p.checkout, p.name));
-    grid.appendChild(el);
+  /* marquee from all regulator tags */
+  var tags = [];
+  STORE.products.forEach(function (p) {
+    (p.regulators || []).forEach(function (r) { if (tags.indexOf(r) === -1) tags.push(r); });
   });
-}
+  if (!tags.length) tags = ["Instant delivery", "Lifetime updates", "Secure checkout"];
+  var mq = tags.concat(tags).map(function (t) { return "<span>" + escapeHtml(t) + "</span>"; }).join("");
+  document.getElementById("marquee").innerHTML = mq;
 
-function guardLink(e, url, label) {
-  if (url.includes(UNSET)) {
-    e.preventDefault();
-    toast(`Creem link not set yet — create "${label}" in your Creem dashboard, then paste its prod_xxxxx link into this file.`);
+  /* featured banner */
+  var feat = featuredProducts();
+  if (feat.length) {
+    document.getElementById("featured").style.display = "";
+    var p = feat[0];
+    var c = categoryById(p.category) || { colors: ["#22d3ee", "#ec4899"] };
+    var live = isLive(p);
+    var action = live
+      ? '<a class="btn btn-grad btn-lg" href="' + p.checkout + '" data-slug="' + p.slug + '">Get it now →</a>'
+      : '<a class="btn btn-ghost btn-lg" href="' + productUrl(p) + '">View details →</a>';
+    document.getElementById("featuredWrap").innerHTML =
+      '<div class="featured-banner">' +
+        '<div class="featured-img">' + (p.image ? '<img src="' + p.image + '" alt="' + escapeHtml(p.name) + '">' : "") + "</div>" +
+        '<div class="featured-body">' +
+          '<span class="eyebrow">' + escapeHtml((categoryById(p.category) || {}).name || "Featured") + "</span>" +
+          "<h3>" + escapeHtml(p.name) + "</h3>" +
+          "<p>" + escapeHtml(p.summary || "") + "</p>" +
+          '<div class="regulator-row">' + (p.regulators || []).map(function (r) {
+            return '<span class="reg-chip">' + escapeHtml(r) + "</span>";
+          }).join("") + "</div>" +
+          '<div class="feat">' + (p.bullets || []).map(function (x) { return "<li>" + escapeHtml(x) + "</li>"; }).join("") + "</div>" +
+          '<div class="featured-cta">' +
+            '<div><span class="old-price">' + escapeHtml(p.oldPrice || "") + '</span> <span class="price grad-text">' + escapeHtml(p.price) + '<small style="font-size:1rem"> one-time</small></span></div>' +
+            action +
+          "</div>" +
+        "</div>" +
+      "</div>";
+    bindCardActions(document.getElementById("featuredWrap"));
   }
-}
 
-let toastTimer;
-function toast(msg) {
-  const t = $("#toast");
-  t.textContent = msg;
-  t.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove("show"), 5000);
-}
+  /* category sections */
+  var out = document.getElementById("categorySections");
+  var secHtml = "";
+  STORE.categories.forEach(function (cat) {
+    var items = productsIn(cat.id);
+    secHtml +=
+      '<div id="cat-' + cat.id + '" style="margin-bottom:64px">' +
+        '<div class="cat-head">' +
+          '<div class="cat-title">' +
+            '<div class="cat-icon" style="--c1:' + cat.colors[0] + ';--c2:' + cat.colors[1] + '">' + (cat.icon || "📦") + "</div>" +
+            "<div><h2>" + escapeHtml(cat.name) + '</h2><div class="cat-tag">' + escapeHtml(cat.tagline || "") + "</div></div>" +
+          "</div>" +
+          '<span class="count-badge">' + items.length + " product" + (items.length === 1 ? "" : "s") + "</span>" +
+        "</div>";
+    secHtml += items.length
+      ? '<div class="grid">' + items.map(productCard).join("") + "</div>"
+      : '<p style="color:var(--muted)">New products are on the way — check back soon.</p>';
+    secHtml += "</div>";
+  });
+  out.innerHTML = secHtml;
+  bindCardActions(out);
 
-render();
+  /* faq */
+  var f = document.getElementById("faqList");
+  f.innerHTML = STORE.faq.map(function (item, i) {
+    return "<details" + (i === 0 ? " open" : "") + "><summary>" + escapeHtml(item.q) + "</summary><p>" + escapeHtml(item.a) + "</p></details>";
+  }).join("");
+})();
 </script>
 </body>
 </html>
