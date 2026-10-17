@@ -81,7 +81,8 @@ const STORE = {
         Updates: "Lifetime"
       },
       regulators: ["ICAO", "USOAP CMA", "IOSA", "EASA", "FAA", "CAAP"],
-      checkout: "https://creem.io/payment/prod_REPLACE_COMPLETE"
+      creemProductId: "prod_3iaUOlwgmlzUxkAxQV80tp",
+      checkout: "https://www.creem.io/product/prod_3iaUOlwgmlzUxkAxQV80tp"
     },
 
     {
@@ -118,7 +119,8 @@ const STORE = {
         Updates: "Lifetime"
       },
       regulators: ["EASA", "FAA", "CAAP"],
-      checkout: "https://creem.io/payment/prod_REPLACE_MRO_AOC"
+      creemProductId: "prod_2LYaadOn6ArGnmOFi7tR0j",
+      checkout: "https://www.creem.io/product/prod_2LYaadOn6ArGnmOFi7tR0j"
     },
 
     {
@@ -154,7 +156,8 @@ const STORE = {
         Updates: "Lifetime"
       },
       regulators: ["IOSA"],
-      checkout: "https://creem.io/payment/prod_REPLACE_IOSA"
+      creemProductId: "prod_4EWUyf0NzOktoiaqftfyg1",
+      checkout: "https://www.creem.io/product/prod_4EWUyf0NzOktoiaqftfyg1"
     },
 
     {
@@ -190,7 +193,8 @@ const STORE = {
         Updates: "Lifetime"
       },
       regulators: ["ICAO", "USOAP CMA"],
-      checkout: "https://creem.io/payment/prod_REPLACE_ICAO_USOAP"
+      creemProductId: "prod_VCWcdDDY91cpNmjLtr8YT",
+      checkout: "https://www.creem.io/product/prod_VCWcdDDY91cpNmjLtr8YT"
     }
   ],
 
