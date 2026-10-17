@@ -24,7 +24,7 @@ const STORE = {
     headline: ["Your premium vault for", "high-performance digital assets."],
     intro:
       "Stop starting from scratch. Get professionally engineered templates and toolkits — built to streamline your workflow and accelerate growth.",
-    supportEmail: "support@example.com"
+    supportEmail: "support@ra19digitalassets.com"
   },
 
   /* ---- CATEGORIES ----------------------------------------------------
@@ -82,7 +82,7 @@ const STORE = {
       },
       regulators: ["ICAO", "USOAP CMA", "IOSA", "EASA", "FAA", "CAAP"],
       creemProductId: "prod_3iaUOlwgmlzUxkAxQV80tp",
-      checkout: "https://www.creem.io/product/prod_3iaUOlwgmlzUxkAxQV80tp"
+      checkout: "https://creem.io/payment/prod_3iaUOlwgmlzUxkAxQV80tp"
     },
 
     {
@@ -120,7 +120,7 @@ const STORE = {
       },
       regulators: ["EASA", "FAA", "CAAP"],
       creemProductId: "prod_2LYaadOn6ArGnmOFi7tR0j",
-      checkout: "https://www.creem.io/product/prod_2LYaadOn6ArGnmOFi7tR0j"
+      checkout: "https://creem.io/payment/prod_2LYaadOn6ArGnmOFi7tR0j"
     },
 
     {
@@ -157,7 +157,7 @@ const STORE = {
       },
       regulators: ["IOSA"],
       creemProductId: "prod_4EWUyf0NzOktoiaqftfyg1",
-      checkout: "https://www.creem.io/product/prod_4EWUyf0NzOktoiaqftfyg1"
+      checkout: "https://creem.io/payment/prod_4EWUyf0NzOktoiaqftfyg1"
     },
 
     {
@@ -193,8 +193,8 @@ const STORE = {
         Updates: "Lifetime"
       },
       regulators: ["ICAO", "USOAP CMA"],
-      creemProductId: "prod_VCWcdDDY91cpNmjLtr8YT",
-      checkout: "https://www.creem.io/product/prod_VCWcdDDY91cpNmjLtr8YT"
+      creemProductId: "prod_1Au0D2vpjb7ZL4chscJZqM",
+      checkout: "https://creem.io/payment/prod_1Au0D2vpjb7ZL4chscJZqM"
     }
   ],
 

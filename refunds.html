@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Refund Policy — RA19 Digital Assets</title>
+<meta name="description" content="Refund Policy for RA19 Digital Assets — how refunds work for instant-download digital products." />
+<link rel="icon" type="image/png" href="store-assets/logo.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo"><img src="store-assets/logo.png" alt="RA19 Digital Assets" /> <span id="brandName">RA19 Digital Assets</span></a>
+    <a href="index.html#catalog" class="btn btn-grad btn-sm">Browse products</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="blob blob-1" style="top:-260px;left:-200px"></div>
+  <div class="blob blob-2" style="top:60px;right:-220px"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <h1>Refund Policy</h1>
+    <p class="updated">Last updated: October 17, 2026</p>
+
+    <p>This Refund Policy explains how refunds are handled for digital products purchased from <span data-brand>RA19 Digital Assets</span>.</p>
+
+    <h2>1. Digital products</h2>
+    <p>Our products are digital goods delivered instantly by download. Because the files are delivered immediately and cannot be "returned", refunds are handled case by case rather than automatically.</p>
+
+    <h2>2. 14-day satisfaction window</h2>
+    <p>If a product genuinely does not match its description, you may request a refund within <b>14 days</b> of purchase. Contact us at <a href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a> with your order details and a short explanation, and we will work with you to make it right.</p>
+
+    <h2>3. How to request a refund</h2>
+    <ul>
+      <li>Email us at <a href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a> from the address used at checkout.</li>
+      <li>Include your order or receipt number and the product name.</li>
+      <li>Tell us briefly why you are requesting a refund.</li>
+    </ul>
+    <p>We aim to respond to every request within a few business days.</p>
+
+    <h2>4. When a refund may not be available</h2>
+    <ul>
+      <li>Requests made more than 14 days after purchase.</li>
+      <li>Products that have been used in a way that breaches our <a href="terms.html">Terms of Service</a>, such as redistribution.</li>
+      <li>Cases where the product clearly matches its published description and the issue is a change of mind.</li>
+    </ul>
+
+    <h2>5. Approved refunds</h2>
+    <p>Approved refunds are issued through <b>Creem</b>, our payment provider, back to your original payment method. Once issued, the timing of when the funds appear depends on your bank or card issuer.</p>
+
+    <h2>6. Chargebacks</h2>
+    <p>If you believe you have been charged in error, please contact us first — we can usually resolve the issue faster than a bank dispute. Creem, as merchant of record, may also appear on your statement for these purchases.</p>
+
+    <h2>7. Contact</h2>
+    <p>Any refund question? Email us at <a href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a>.</p>
+
+    <a class="btn btn-ghost back" href="index.html">← Back to the store</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <small>© <span id="year"></span> <span id="brandFoot">RA19 Digital Assets</span>. All rights reserved.</small>
+    <div class="foot-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refunds.html">Refund policy</a>
+      <a id="supportLink" href="mailto:support@ra19digitalassets.com">support@ra19digitalassets.com</a>
+    </div>
+    <small>Payments powered by <b>Creem</b></small>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var b = STORE.brand;
+  document.getElementById("brandName").textContent = b.name;
+  document.getElementById("brandFoot").textContent = b.name;
+  document.getElementById("year").textContent = year();
+  document.title = "Refund Policy — " + b.name;
+  document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = b.name; });
+  document.querySelectorAll("[data-support]").forEach(function (el) {
+    el.href = "mailto:" + b.supportEmail;
+    el.textContent = b.supportEmail;
+  });
+  var support = document.getElementById("supportLink");
+  support.href = "mailto:" + b.supportEmail;
+  support.textContent = b.supportEmail;
+})();
+</script>
+</body>
+</html>

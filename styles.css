@@ -277,6 +277,19 @@ footer small { color: var(--muted); font-size: 0.85rem; }
 }
 #toast.show { transform: translate(-50%, 0); }
 
+/* ---- legal / policy pages ---- */
+.legal { position: relative; padding: 60px 0 90px; }
+.legal .wrap { max-width: 820px; }
+.legal h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 10px; }
+.legal .updated { color: var(--muted); font-size: 0.85rem; margin-bottom: 34px; }
+.legal h2 { font-size: 1.22rem; font-weight: 800; letter-spacing: -0.02em; margin: 34px 0 12px; }
+.legal p { color: #cfc9ee; font-size: 0.96rem; margin-bottom: 14px; }
+.legal ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin: 0 0 16px; }
+.legal ul li { color: #cfc9ee; font-size: 0.94rem; display: flex; gap: 10px; align-items: flex-start; }
+.legal ul li::before { content: "•"; color: var(--g3); font-weight: 800; }
+.legal a { color: var(--g3); text-decoration: underline; text-underline-offset: 2px; }
+.legal .back { margin-top: 40px; }
+
 @media (max-width: 640px) {
   .nav-links { display: none; }
   section { padding: 64px 0; }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — RA19 Digital Assets</title>
+<meta name="description" content="Terms of Service for RA19 Digital Assets — digital products, licensing, payments, and delivery." />
+<link rel="icon" type="image/png" href="store-assets/logo.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo"><img src="store-assets/logo.png" alt="RA19 Digital Assets" /> <span id="brandName">RA19 Digital Assets</span></a>
+    <a href="index.html#catalog" class="btn btn-grad btn-sm">Browse products</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="blob blob-1" style="top:-260px;left:-200px"></div>
+  <div class="blob blob-2" style="top:60px;right:-220px"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: October 17, 2026</p>
+
+    <p>These Terms of Service ("Terms") govern your access to and use of the website, products and services offered by <span data-brand>RA19 Digital Assets</span> ("we", "us", "our"), including any digital products purchased through our store. By browsing this site or completing a purchase, you agree to these Terms.</p>
+
+    <h2>1. Products</h2>
+    <p>We sell downloadable digital products, including document templates, checklists and toolkits (the "Products"). Products are delivered electronically. We do not sell physical goods.</p>
+
+    <h2>2. License and permitted use</h2>
+    <p>When you purchase a Product, you are granted a non-exclusive, non-transferable license to use the files for the purposes described on the product page. Unless stated otherwise:</p>
+    <ul>
+      <li>You may use and adapt the files within your own organization, for unlimited internal users.</li>
+      <li>You may not resell, redistribute, sublicense or publicly share the files, in whole or in part.</li>
+      <li>You may not claim authorship of the original templates.</li>
+      <li>The license is granted to the purchaser and does not expire.</li>
+    </ul>
+
+    <h2>3. No professional advice</h2>
+    <p>Our Products are general templates and reference materials. They are provided to assist your own work and do not constitute legal, regulatory, aviation-safety, financial or professional advice, and are not a substitute for official regulator guidance. You are responsible for verifying that any use complies with the requirements applicable to you.</p>
+
+    <h2>4. Payments</h2>
+    <p>All payments are processed by our payment provider, <b>Creem</b>, which acts as the merchant of record for purchases made through this store. Prices are shown at checkout and may be displayed in your local currency. Applicable taxes and duties are handled by Creem in accordance with your location.</p>
+
+    <h2>5. Delivery</h2>
+    <p>Delivery is instant. Once your payment is confirmed, you are directed to your download and a receipt with your download link is sent to the email address you provide at checkout. It is your responsibility to provide a valid email address.</p>
+
+    <h2>6. Refunds</h2>
+    <p>Our refund policy is set out in our <a href="refunds.html">Refund Policy</a>, which forms part of these Terms.</p>
+
+    <h2>7. Intellectual property</h2>
+    <p>All Products and site content remain the intellectual property of <span data-brand>RA19 Digital Assets</span> and its licensors. Purchasing a Product grants you a license to use it as described above; it does not transfer ownership of the underlying intellectual property.</p>
+
+    <h2>8. Acceptable use</h2>
+    <p>You agree not to use this site or the Products for any unlawful purpose, to attempt to gain unauthorized access to our systems, or to interfere with the normal operation of the store.</p>
+
+    <h2>9. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, <span data-brand>RA19 Digital Assets</span> shall not be liable for any indirect, incidental, special or consequential damages arising from the use of, or inability to use, the Products. Our total liability for any claim relating to a Product is limited to the amount you paid for that Product.</p>
+
+    <h2>10. Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. The version in effect at the time of your purchase applies to that purchase. Continued use of the site after an update constitutes acceptance of the revised Terms.</p>
+
+    <h2>11. Contact</h2>
+    <p>Questions about these Terms? Contact us at <a id="supportInline" href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a>.</p>
+
+    <a class="btn btn-ghost back" href="index.html">← Back to the store</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <small>© <span id="year"></span> <span id="brandFoot">RA19 Digital Assets</span>. All rights reserved.</small>
+    <div class="foot-links">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refunds.html">Refund policy</a>
+      <a id="supportLink" href="mailto:support@ra19digitalassets.com">support@ra19digitalassets.com</a>
+    </div>
+    <small>Payments powered by <b>Creem</b></small>
+  </div>
+</footer>
+
+<script src="products.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var b = STORE.brand;
+  document.getElementById("brandName").textContent = b.name;
+  document.getElementById("brandFoot").textContent = b.name;
+  document.getElementById("year").textContent = year();
+  document.title = "Terms of Service — " + b.name;
+  document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = b.name; });
+  document.querySelectorAll("[data-support]").forEach(function (el) {
+    el.href = "mailto:" + b.supportEmail;
+    el.textContent = b.supportEmail;
+  });
+  var support = document.getElementById("supportLink");
+  support.href = "mailto:" + b.supportEmail;
+  support.textContent = b.supportEmail;
+})();
+</script>
+</body>
+</html>

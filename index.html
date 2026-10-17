@@ -90,10 +90,10 @@
   <div class="wrap foot">
     <small>© <span id="year"></span> <span id="brandFoot">RA19 Digital Assets</span>. All rights reserved.</small>
     <div class="foot-links">
-      <a href="#">Terms</a>
-      <a href="#">Privacy</a>
-      <a href="#">Refund policy</a>
-      <a id="supportLink" href="#">Support</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refunds.html">Refund policy</a>
+      <a id="supportLink" href="mailto:support@ra19digitalassets.com">support@ra19digitalassets.com</a>
     </div>
     <small>Payments powered by <b>Creem</b></small>
   </div>
@@ -114,7 +114,7 @@
     "Every product is a one-time purchase. Pay once, download instantly, keep it forever.";
   var support = document.getElementById("supportLink");
   support.href = "mailto:" + b.supportEmail;
-  support.textContent = "Support";
+  support.textContent = b.supportEmail;
 
   var h1 = document.getElementById("heroHeadline");
   h1.innerHTML = escapeHtml(b.headline[0]) + "<br /><span class=\"grad-text\">" + escapeHtml(b.headline[1] || "") + "</span>";
