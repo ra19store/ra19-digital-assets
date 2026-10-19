@@ -1,0 +1,26 @@
+# ---- Secrets & credentials (never commit) ----
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+.creem/
+.wrangler/
+.dev.vars
+_secrets/
+
+# ---- OS / editor cruft ----
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+
+# ---- Cloudflare ----
+.wrangler/

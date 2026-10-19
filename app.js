@@ -5,6 +5,22 @@
 
 const UNSET_TOKEN = "prod_REPLACE";
 
+/* ---- site config ----------------------------------------------------
+   SITE_BASE = canonical origin. Products live at the same origin today;
+   if products move to products.ra19digitalassets.com later, only this
+   (and the checkout/image URLs in products.js) need to change.
+   --------------------------------------------------------------------- */
+const SITE_BASE = "https://ra19digitalassets.com";
+const PRODUCTS_BASE = ""; /* empty = same origin; set to "https://products.ra19digitalassets.com" to split */
+
+function siteUrl(path) {
+  return SITE_BASE + "/" + String(path).replace(/^\/+/, "");
+}
+function productsUrl(path) {
+  const base = PRODUCTS_BASE || SITE_BASE;
+  return base + "/" + String(path).replace(/^\/+/, "");
+}
+
 /* ---- data helpers ---- */
 function productsIn(categoryId) {
   return STORE.products.filter((p) => p.category === categoryId);
@@ -26,6 +42,9 @@ function relatedProducts(product, limit = 3) {
 }
 function productUrl(product) {
   return "product.html?slug=" + encodeURIComponent(product.slug);
+}
+function productShareUrl(product) {
+  return productsUrl("product/" + encodeURIComponent(product.slug) + "/");
 }
 function isLive(product) {
   return product.status === "live" && product.checkout && !product.checkout.includes(UNSET_TOKEN);

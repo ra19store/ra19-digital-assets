@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /*.png$
+Disallow: /store-assets/
+
+Sitemap: https://ra19digitalassets.com/sitemap.xml

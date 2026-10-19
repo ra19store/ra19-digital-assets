@@ -5,17 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Terms of Service — RA19 Digital Assets</title>
 <meta name="description" content="Terms of Service for RA19 Digital Assets — digital products, licensing, payments, and delivery." />
-<link rel="icon" type="image/png" href="store-assets/logo.png" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/png" href="../store-assets/logo.png" />
+<link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a href="index.html" class="logo"><img src="store-assets/logo.png" alt="RA19 Digital Assets" /> <span id="brandName">RA19 Digital Assets</span></a>
-    <a href="index.html#catalog" class="btn btn-grad btn-sm">Browse products</a>
-  </div>
-</header>
+<div id="site-header"></div>
 
 <main class="legal">
   <div class="blob blob-1" style="top:-260px;left:-200px"></div>
@@ -63,43 +58,17 @@
     <p>We may update these Terms from time to time. The version in effect at the time of your purchase applies to that purchase. Continued use of the site after an update constitutes acceptance of the revised Terms.</p>
 
     <h2>11. Contact</h2>
-    <p>Questions about these Terms? Contact us at <a id="supportInline" href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a>.</p>
+    <p>Questions about these Terms? Contact us at <a data-support href="../support.html">support@ra19digitalassets.com</a>.</p>
 
-    <a class="btn btn-ghost back" href="index.html">← Back to the store</a>
+    <a class="btn btn-ghost back" href="../index.html">← Back to the store</a>
   </div>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <small>© <span id="year"></span> <span id="brandFoot">RA19 Digital Assets</span>. All rights reserved.</small>
-    <div class="foot-links">
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="refunds.html">Refund policy</a>
-      <a id="supportLink" href="mailto:support@ra19digitalassets.com">support@ra19digitalassets.com</a>
-    </div>
-    <small>Payments powered by <b>Creem</b></small>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
-<script src="products.js"></script>
-<script src="app.js"></script>
-<script>
-(function () {
-  var b = STORE.brand;
-  document.getElementById("brandName").textContent = b.name;
-  document.getElementById("brandFoot").textContent = b.name;
-  document.getElementById("year").textContent = year();
-  document.title = "Terms of Service — " + b.name;
-  document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = b.name; });
-  document.querySelectorAll("[data-support]").forEach(function (el) {
-    el.href = "mailto:" + b.supportEmail;
-    el.textContent = b.supportEmail;
-  });
-  var support = document.getElementById("supportLink");
-  support.href = "mailto:" + b.supportEmail;
-  support.textContent = b.supportEmail;
-})();
-</script>
+<script src="../products.js"></script>
+<script src="../app.js"></script>
+<script src="../layout.js"></script>
+<script src="../pages/legal.js"></script>
 </body>
 </html>

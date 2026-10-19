@@ -40,6 +40,15 @@ const STORE = {
         "ICAO / IOSA / MRO & AOC compliance and audit kits — complete, editable, regulator-mapped.",
       icon: "✈️",
       colors: ["#22d3ee", "#7c3aed"]
+    },
+    {
+      id: "business",
+      name: "Business & Operations Toolkits",
+      short: "Business",
+      tagline:
+        "Templates, planners and systems for running lean, professional operations.",
+      icon: "📊",
+      colors: ["#f59e0b", "#ef4444"]
     }
   ],
 
@@ -195,6 +204,31 @@ const STORE = {
       regulators: ["ICAO", "USOAP CMA"],
       creemProductId: "prod_1Au0D2vpjb7ZL4chscJZqM",
       checkout: "https://creem.io/payment/prod_1Au0D2vpjb7ZL4chscJZqM"
+    },
+
+    {
+      slug: "operations-toolkit",
+      category: "business",
+      name: "Operations & Business Toolkit",
+      subtitle: "In development",
+      price: "$0",
+      oldPrice: "",
+      badge: "",
+      featured: false,
+      status: "coming",
+      image: "",
+      summary:
+        "A ready-to-use set of business and operations templates. In development — check back soon, or contact support to be notified when it launches.",
+      bullets: [
+        "Planning & scheduling templates",
+        "Editable Word & Excel formats",
+        "Launching soon"
+      ],
+      includes: [],
+      specs: {},
+      regulators: [],
+      creemProductId: "",
+      checkout: ""
     }
   ],
 

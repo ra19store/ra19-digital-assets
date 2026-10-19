@@ -5,17 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Privacy Policy — RA19 Digital Assets</title>
 <meta name="description" content="Privacy Policy for RA19 Digital Assets — what data we collect, how we use it, and your rights." />
-<link rel="icon" type="image/png" href="store-assets/logo.png" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/png" href="../store-assets/logo.png" />
+<link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a href="index.html" class="logo"><img src="store-assets/logo.png" alt="RA19 Digital Assets" /> <span id="brandName">RA19 Digital Assets</span></a>
-    <a href="index.html#catalog" class="btn btn-grad btn-sm">Browse products</a>
-  </div>
-</header>
+<div id="site-header"></div>
 
 <main class="legal">
   <div class="blob blob-1" style="top:-260px;left:-200px"></div>
@@ -55,7 +50,7 @@
     <p>We keep order and support records for as long as necessary to provide our services and to comply with legal, tax and accounting requirements. When no longer needed, we delete or anonymise the data.</p>
 
     <h2>7. Your rights</h2>
-    <p>Depending on where you live, you may have the right to access, correct, delete or restrict the processing of your personal information, and to object to certain processing. To exercise any of these rights, contact us at <a href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a>.</p>
+    <p>Depending on where you live, you may have the right to access, correct, delete or restrict the processing of your personal information, and to object to certain processing. To exercise any of these rights, contact us at <a data-support href="../support.html">support@ra19digitalassets.com</a>.</p>
 
     <h2>8. International transfers</h2>
     <p>Our service providers may process your information in countries other than your own. Where required, we rely on appropriate safeguards for such transfers.</p>
@@ -67,43 +62,17 @@
     <p>We may update this Privacy Policy from time to time. The "Last updated" date above shows when it was last revised.</p>
 
     <h2>11. Contact</h2>
-    <p>For any privacy question or request, contact us at <a href="mailto:support@ra19digitalassets.com" data-support>support@ra19digitalassets.com</a>.</p>
+    <p>For any privacy question or request, contact us at <a data-support href="../support.html">support@ra19digitalassets.com</a>.</p>
 
-    <a class="btn btn-ghost back" href="index.html">← Back to the store</a>
+    <a class="btn btn-ghost back" href="../index.html">← Back to the store</a>
   </div>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <small>© <span id="year"></span> <span id="brandFoot">RA19 Digital Assets</span>. All rights reserved.</small>
-    <div class="foot-links">
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="refunds.html">Refund policy</a>
-      <a id="supportLink" href="mailto:support@ra19digitalassets.com">support@ra19digitalassets.com</a>
-    </div>
-    <small>Payments powered by <b>Creem</b></small>
-  </div>
-</footer>
+<div id="site-footer"></div>
 
-<script src="products.js"></script>
-<script src="app.js"></script>
-<script>
-(function () {
-  var b = STORE.brand;
-  document.getElementById("brandName").textContent = b.name;
-  document.getElementById("brandFoot").textContent = b.name;
-  document.getElementById("year").textContent = year();
-  document.title = "Privacy Policy — " + b.name;
-  document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = b.name; });
-  document.querySelectorAll("[data-support]").forEach(function (el) {
-    el.href = "mailto:" + b.supportEmail;
-    el.textContent = b.supportEmail;
-  });
-  var support = document.getElementById("supportLink");
-  support.href = "mailto:" + b.supportEmail;
-  support.textContent = b.supportEmail;
-})();
-</script>
+<script src="../products.js"></script>
+<script src="../app.js"></script>
+<script src="../layout.js"></script>
+<script src="../pages/legal.js"></script>
 </body>
 </html>
