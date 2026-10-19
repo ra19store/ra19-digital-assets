@@ -1,19 +1,19 @@
-# Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
-# Legacy URLs (from the old flat structure) -> new locations. These are the
-# important ones: keep old bookmarks/backlinks working after the reorg.
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# IMPORTANT: never redirect TO a ".html" path — Cloudflare Pages strips ".html"
+# from URLs (pretty URLs) and would create a 308 loop. Redirect legacy paths to
+# their new *extensionless* location instead.
 
-/terms.html          /legal/terms.html         301
-/privacy.html        /legal/privacy.html       301
-/refunds.html        /legal/refunds.html       301
-/terms               /legal/terms.html         301
-/privacy             /legal/privacy.html       301
-/refunds             /legal/refunds.html       301
+# Old flat legal pages -> new legal/ folder
+/terms.html          /legal/terms          301
+/privacy.html        /legal/privacy        301
+/refunds.html        /legal/refunds        301
+/terms               /legal/terms          301
+/privacy             /legal/privacy        301
+/refunds             /legal/refunds        301
 
-# Convenience aliases
-/support             /support.html             301
-/contact             /support.html             301
-/products            /catalog.html             301
-/catalog             /catalog.html             301
-
-# Strip trailing .html on product page for tidy share URLs
-/product             /product.html             301
+# Convenience aliases (note: do NOT add "/support -> /support": Pages already
+# serves /support from support.html, and a self-redirect would loop)
+/contact             /support              301
+/products            /catalog              301

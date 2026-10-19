@@ -13,7 +13,7 @@
       '<div class="wrap not-found">' +
         "<h1>Product not found</h1>" +
         "<p>That product doesn't exist or may have been moved.</p>" +
-        '<a class="btn btn-grad" href="catalog.html">Browse all products</a>' +
+        '<a class="btn btn-grad" href="catalog">Browse all products</a>' +
       "</div>";
     return;
   }
@@ -36,9 +36,9 @@
       '<div class="blob blob-2" style="top:-100px;right:-200px"></div>' +
       '<div class="wrap" style="position:relative;z-index:1">' +
         '<div class="crumbs">' +
-          '<a href="index.html">Home</a><span class="sep">/</span>' +
-          '<a href="catalog.html">Catalog</a><span class="sep">/</span>' +
-          '<a href="catalog.html#cat-' + cat.id + '">' + escapeHtml(cat.name) + "</a>" +
+          '<a href="./">Home</a><span class="sep">/</span>' +
+          '<a href="catalog">Catalog</a><span class="sep">/</span>' +
+          '<a href="catalog#cat-' + cat.id + '">' + escapeHtml(cat.name) + "</a>" +
           '<span class="sep">/</span><span>' + escapeHtml(p.name) + "</span>" +
         "</div>" +
         '<div class="pdp-grid">' +

@@ -10,7 +10,7 @@
 
   document.getElementById("categoryCards").innerHTML = STORE.categories.map(function (c) {
     var count = productsIn(c.id).length;
-    return '<a class="card" href="catalog.html#cat-' + c.id + '" style="--c1:' + c.colors[0] + ';--c2:' + c.colors[1] + '">' +
+    return '<a class="card" href="catalog#cat-' + c.id + '" style="--c1:' + c.colors[0] + ';--c2:' + c.colors[1] + '">' +
       '<div class="card-body" style="padding:30px 26px">' +
         '<div class="cat-icon" style="--c1:' + c.colors[0] + ';--c2:' + c.colors[1] + ';margin-bottom:16px">' + (c.icon || "📦") + "</div>" +
         "<h3>" + escapeHtml(c.name) + "</h3>" +

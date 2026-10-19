@@ -10,9 +10,9 @@ function renderHeader(active) {
     { href: "catalog.html", label: "Catalog", key: "catalog" }
   ];
   let catLinks = STORE.categories
-    .map((c) => `<a href="catalog.html#cat-${c.id}">${escapeHtml(c.short || c.name)}</a>`)
+    .map((c) => `<a href="catalog#cat-${c.id}">${escapeHtml(c.short || c.name)}</a>`)
     .join("");
-  nav.push({ html: `<div class="dropdown"><a href="catalog.html">Products</a><div class="dropdown-menu">${catLinks}</div></div>`, key: "products" });
+  nav.push({ html: `<div class="dropdown"><a href="catalog">Products</a><div class="dropdown-menu">${catLinks}</div></div>`, key: "products" });
   nav.push({ href: "support.html", label: "Support", key: "support" });
 
   const links = nav
@@ -26,9 +26,9 @@ function renderHeader(active) {
   return `
   <header class="nav">
     <div class="wrap nav-in">
-      <a href="index.html" class="logo"><img src="store-assets/logo.png" alt="${escapeHtml(b.name)}" /> <span>${escapeHtml(b.name)}</span></a>
+      <a href="./" class="logo"><img src="store-assets/logo.png" alt="${escapeHtml(b.name)}" /> <span>${escapeHtml(b.name)}</span></a>
       <nav class="nav-links">${links}</nav>
-      <a href="catalog.html" class="btn btn-grad btn-sm">Browse products</a>
+      <a href="catalog" class="btn btn-grad btn-sm">Browse products</a>
     </div>
   </header>`;
 }
@@ -40,10 +40,10 @@ function renderFooter() {
     <div class="wrap foot">
       <small>© <span class="js-year"></span> ${escapeHtml(b.name)}. All rights reserved.</small>
       <div class="foot-links">
-        <a href="legal/terms.html">Terms</a>
-        <a href="legal/privacy.html">Privacy</a>
-        <a href="legal/refunds.html">Refund policy</a>
-        <a href="support.html">Support</a>
+        <a href="legal/terms">Terms</a>
+        <a href="legal/privacy">Privacy</a>
+        <a href="legal/refunds">Refund policy</a>
+        <a href="support">Support</a>
         <a href="mailto:${escapeHtml(b.supportEmail)}">${escapeHtml(b.supportEmail)}</a>
       </div>
       <small>Payments powered by <b>Creem</b></small>

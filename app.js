@@ -41,7 +41,7 @@ function relatedProducts(product, limit = 3) {
   return [...same, ...others].slice(0, limit);
 }
 function productUrl(product) {
-  return "product.html?slug=" + encodeURIComponent(product.slug);
+  return "product?slug=" + encodeURIComponent(product.slug);
 }
 function productShareUrl(product) {
   return productsUrl("product/" + encodeURIComponent(product.slug) + "/");

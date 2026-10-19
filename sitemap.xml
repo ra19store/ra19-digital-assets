@@ -6,47 +6,47 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/catalog.html</loc>
+    <loc>https://ra19digitalassets.com/catalog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/support.html</loc>
+    <loc>https://ra19digitalassets.com/support</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/product.html?slug=complete-audit-package</loc>
+    <loc>https://ra19digitalassets.com/product?slug=complete-audit-package</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/product.html?slug=mro-aoc-audit-package</loc>
+    <loc>https://ra19digitalassets.com/product?slug=mro-aoc-audit-package</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/product.html?slug=iosa-audit-package</loc>
+    <loc>https://ra19digitalassets.com/product?slug=iosa-audit-package</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/product.html?slug=icao-usoap-audit-package</loc>
+    <loc>https://ra19digitalassets.com/product?slug=icao-usoap-audit-package</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/legal/terms.html</loc>
+    <loc>https://ra19digitalassets.com/legal/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/legal/privacy.html</loc>
+    <loc>https://ra19digitalassets.com/legal/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://ra19digitalassets.com/legal/refunds.html</loc>
+    <loc>https://ra19digitalassets.com/legal/refunds</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
