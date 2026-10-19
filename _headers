@@ -14,11 +14,18 @@ https://ra19digitalassets.com/*
 /store-assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# CSS/JS change on every site update; revalidate so edits apply immediately
+# CSS/JS change on every site update; revalidate so edits apply immediately.
+# NOTE: "/*.js" only matches root-level files; "/**" covers nested dirs (e.g. pages/).
 /*.css
   Cache-Control: public, max-age=0, must-revalidate
 
 /*.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/pages/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/legal/*
   Cache-Control: public, max-age=0, must-revalidate
 
 /.well-known/security.txt
