@@ -41,6 +41,9 @@ static build deployed to **Cloudflare Pages** behind the custom domain
 - Everything is served from the repository root by Cloudflare Pages. Pages strips `.html`
   from URLs ("pretty URLs"), so internal links are **extensionless** (`/catalog`, not
   `/catalog.html`). Old `.html` URLs 301 via `_redirects`.
+- **Asset cache-busting:** CSS/JS references carry a version query string
+  (`styles.css?v=2`, `pages/support.js?v=2`, …). Bump this `?v=` value on every release that
+  changes CSS/JS so clients and the edge pick up the new files immediately. See §15.
 
 ---
 
@@ -60,7 +63,7 @@ ra19-digital-assets/
 ├─ layout.js            Shared header + footer renderer (mountLayout)
 ├─ pages/               Per-page scripts (home.js, catalog.js, product.js, support.js, legal.js, 404.js)
 ├─ products.js          SINGLE SOURCE OF TRUTH: brand, categories, products, faq
-├─ styles.css           Design system (dark gradient theme) + .legal styles
+├─ styles.css           Design system (dark gradient theme) + .legal + .support-* styles
 ├─ 404.html             Not-found page
 ├─ _headers             Cloudflare Pages security headers (CSP, HSTS, etc.)
 ├─ _redirects           Cloudflare Pages redirects (legacy .html -> clean URLs)
@@ -264,6 +267,10 @@ links, support email forwarding, and four live Creem checkout products.
 | `8106d66` | Add Terms, Privacy and Refund pages; real support email; fix Creem checkout links |
 | `045f8e2` | Add CNAME for ra19digitalassets.com; canonical + absolute OG image URLs |
 | `41c9726` | Trigger GitHub Pages certificate provisioning for custom domain (empty commit) |
+| `1b7b53a` | Migration to Cloudflare Pages (reorganized pages, CSP-safe scripts, `_headers`/`_redirects`, wrangler deploy) |
+| `c0b4bb7` | Redesign support page: contact card + accordion FAQ |
+| `bac9ff3` | Revalidate CSS/JS on every request so updates apply instantly |
+| `f6a5a8e` | Fix support FAQ caching: version assets (`?v=2`) + correct nested JS cache headers |
 
 > **History note:** On 2026-10-20 git history was rewritten (`git filter-repo`) to purge a
 > personal Gmail address that had appeared in earlier commits. The old SHAs
@@ -320,3 +327,29 @@ keep the Creem key server-side only (it is never needed by the static site).
 
 **Deploy**
 - `git push origin main` — GitHub Actions publishes automatically.
+
+---
+
+## 15. Support page & asset caching notes
+
+- `support.html` uses `<main class="legal support-page">`. It contains a highlighted contact
+  card (`.support-contact` with `.support-contact-main` / `.support-contact-tip` and a
+  `.support-mail` mailto button) and the "Common questions" **accordion**
+  (`<div class="faq support-faq" id="supportFaq">`), rendered by `pages/support.js` as
+  `<details>`/`<summary>` items — the same accordion pattern used on the homepage FAQ.
+- Matching `.support-*` styles live at the end of `styles.css` (before the responsive media
+  queries).
+
+### Cache-busting (important)
+- Cloudflare Pages applies `_headers` at the edge. Rules `/*.css` and `/*.js` only reliably
+  match **root-level** files, so `pages/*.js` and `legal/*.js` need their own revalidation
+  rules (already present in `_headers`).
+- **Even so, the reliable fix for shipping CSS/JS edits is the version query string.** When you
+  change any CSS or JS and want it live immediately, bump `?v=N` on the asset references in
+  **every** HTML file (`index.html`, `catalog.html`, `product.html`, `support.html`,
+  `404.html`, and `legal/*.html`).
+- Symptom if you forget: the page's **HTML** updates but its **script** stays stale — e.g. a
+  redesigned section renders with the old markup/behaviour until the edge cache expires.
+
+**Verify the live render** (headless Chrome dump of the rendered DOM) after deploying CSS/JS
+changes; a plain `curl` only shows the pre-JS HTML.
