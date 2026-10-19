@@ -3,11 +3,11 @@
 Static marketing + checkout storefront for **RA19 Digital Assets** (a small catalogue of
 ready-to-use aviation annual-audit packages: ICAO / USOAP, IATA IOSA, and MRO & AOC
 templates). Payments are handled by **Creem** (Merchant of Record). The site is a plain
-static build deployed to **GitHub Pages** behind the custom domain
+static build deployed to **Cloudflare Pages** behind the custom domain
 **https://ra19digitalassets.com**.
 
 > This README is intentionally thorough so that a future developer or AI assistant can pick
-> up the project without prior context. It is part of the published GitHub Pages artifact
+> up the project without prior context. It is part of the published site artifact
 > (the deploy uploads the whole repo), so **it must never contain secrets**. See
 > [Credentials & Security](#credentials--security).
 
@@ -18,14 +18,14 @@ static build deployed to **GitHub Pages** behind the custom domain
 | Purpose | URL |
 | --- | --- |
 | Production site (canonical) | https://ra19digitalassets.com |
-| Production `www` | https://www.ra19digitalassets.com → redirects to apex |
-| GitHub Pages default URL | https://ra19store.github.io/ra19-digital-assets/ |
+| Production `www` | https://www.ra19digitalassets.com |
+| Cloudflare Pages project URL | https://ra19-digital-assets.pages.dev |
 | GitHub repository | https://github.com/ra19store/ra19-digital-assets |
 | Creem storefront (hosted) | https://creem.io/store/<store-name> *(optional, dashboard-managed)* |
 | Gumroad (original source of the products) | A Gumroad storefront (link not published here) |
 
 - **DNS / registrar:** Cloudflare (nameservers `novalee.ns.cloudflare.com`, `jasper.ns.cloudflare.com`).
-- **Hosting:** GitHub Pages, built and deployed by GitHub Actions from `main`.
+- **Hosting:** Cloudflare Pages, deployed by GitHub Actions from `main` (and directly via `wrangler`).
 - **Payments:** Creem (live mode).
 
 ---
@@ -33,12 +33,14 @@ static build deployed to **GitHub Pages** behind the custom domain
 ## 2. Tech stack & conventions
 
 - **No framework, no build step.** Plain HTML + CSS + vanilla JS.
-- Data lives in a single JS file (`products.js`) and is rendered client-side by `app.js`
-  and small inline scripts per page.
+- Data lives in a single JS file (`products.js`) and is rendered client-side by `app.js`,
+  `layout.js` (shared header/footer) and per-page scripts in `pages/`.
 - Design is a dark gradient theme defined in `styles.css` (CSS custom properties).
 - Encoding: UTF-8. Line endings in the repo are LF (Git may warn about CRLF on Windows — this
   is harmless).
-- Everything is served from the repository root by GitHub Pages.
+- Everything is served from the repository root by Cloudflare Pages. Pages strips `.html`
+  from URLs ("pretty URLs"), so internal links are **extensionless** (`/catalog`, not
+  `/catalog.html`). Old `.html` URLs 301 via `_redirects`.
 
 ---
 
@@ -46,23 +48,35 @@ static build deployed to **GitHub Pages** behind the custom domain
 
 ```
 ra19-digital-assets/
-├─ index.html           Homepage: hero, featured products, catalogue by category, FAQ, footer
-├─ product.html         Product detail page template (reads ?slug=<product-slug>)
+├─ index.html           Homepage: hero, featured product, category cards, FAQ
+├─ catalog.html         Full catalogue with category filter chips
+├─ product.html         Product detail page (reads ?slug=<product-slug>)
+├─ support.html         Support / contact page
+├─ legal/
+│  ├─ terms.html        Terms of Service (compliance)
+│  ├─ privacy.html      Privacy Policy (compliance)
+│  └─ refunds.html      Refund Policy (compliance)
 ├─ app.js               Shared logic: data helpers, link guard, toast, card builder
+├─ layout.js            Shared header + footer renderer (mountLayout)
+├─ pages/               Per-page scripts (home.js, catalog.js, product.js, support.js, legal.js, 404.js)
 ├─ products.js          SINGLE SOURCE OF TRUTH: brand, categories, products, faq
 ├─ styles.css           Design system (dark gradient theme) + .legal styles
 ├─ 404.html             Not-found page
-├─ terms.html           Terms of Service (compliance)
-├─ privacy.html         Privacy Policy (compliance)
-├─ refunds.html         Refund Policy (compliance)
-├─ CNAME                Contains: ra19digitalassets.com
+├─ _headers             Cloudflare Pages security headers (CSP, HSTS, etc.)
+├─ _redirects           Cloudflare Pages redirects (legacy .html -> clean URLs)
+├─ robots.txt           Robots policy + sitemap pointer
+├─ sitemap.xml          XML sitemap
+├─ .well-known/
+│  └─ security.txt      Security contact disclosure
+├─ .gitignore           Blocks secrets (.env, keys, .creem/, .wrangler/)
 ├─ store-assets/        Images: logo.png, og-cover.png, product-*.png
+├─ subdomains/          Notes for the future products.ra19digitalassets.com subdomain
 └─ .github/workflows/
-   └─ deploy.yml        GitHub Actions → GitHub Pages deployment
+   └─ deploy.yml        GitHub Actions → Cloudflare Pages deployment
 ```
 
-There is **no** `.nojekyll` file; GitHub Pages is configured with `build_type: workflow`
-(see §6), and the workflow uploads the repository root with `actions/upload-pages-artifact`.
+There is **no** `.nojekyll` file and no `CNAME` file — those were GitHub Pages-specific.
+Cloudflare Pages applies `_headers` and `_redirects` automatically at the edge.
 
 ---
 
@@ -130,37 +144,41 @@ API. It must be purged by **Creem support**. It is no longer referenced anywhere
 ## 6. Deployment
 
 - **Branch:** `main` (remote `origin` = `https://github.com/ra19store/ra19-digital-assets.git`).
-- Pushing to `main` triggers `.github/workflows/deploy.yml`:
-  `configure-pages` → `upload-pages-artifact` (path `.`) → `deploy-pages`.
-- GitHub Pages site config: `build_type: workflow`, `source: main /`, custom domain set,
-  `https_enforced: true`.
-- Manage Pages settings via the API (gh CLI authenticated as `ra19store`):
+- **Host:** Cloudflare Pages, project **`ra19-digital-assets`** (account id
+  `8cd46e86027ee34a7b4d4b964eb75bcc`).
+- Pushing to `main` triggers `.github/workflows/deploy.yml`, which runs
+  `wrangler pages deploy . --project-name=ra19-digital-assets --branch=main`.
+  It needs repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
+- Manual deploy (local, from the repo root):
 
   ```powershell
-  gh api repos/ra19store/ra19-digital-assets/pages
-  gh api -X PUT repos/ra19store/ra19-digital-assets/pages -f cname=ra19digitalassets.com
-  gh api -X PUT repos/ra19store/ra19-digital-assets/pages -F https_enforced=true
+  $env:CLOUDFLARE_API_TOKEN = "<token>"
+  $env:CLOUDFLARE_ACCOUNT_ID  = "8cd46e86027ee34a7b4d4b964eb75bcc"
+  & "$env:APPDATA\npm\wrangler.cmd" pages deploy . --project-name=ra19-digital-assets --branch=main
   ```
 
-To deploy, just commit and push to `main`; the action publishes within ~1 minute.
+  (Requires `C:\Program Files\nodejs` on `$env:Path`; use `npm.cmd`/`wrangler.cmd`, not the
+  `.ps1` shims.)
+
+- Static config files applied automatically at the edge: `_headers` (security) and
+  `_redirects` (legacy URL 301s).
 
 ---
 
 ## 7. Custom domain, DNS & HTTPS
 
-- Custom domain: `ra19digitalassets.com` (also committed as the `CNAME` file).
-- DNS records created in the Cloudflare zone (all **DNS-only / not proxied**):
-  - `A` `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-  - `AAAA` `@` → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
-  - `CNAME` `www` → `ra19store.github.io`
-  - No CAA record (intentionally, so GitHub can issue certificates).
-- **HTTPS** is enforced; the GitHub-issued certificate covers `ra19digitalassets.com` and
-  `www.ra19digitalassets.com`.
+- Custom domains on the Pages project: `ra19digitalassets.com` and `www.ra19digitalassets.com`
+  (both `status: active`).
+- DNS records in the Cloudflare zone (both **proxied / orange-cloud**):
+  - `CNAME` `@` → `ra19-digital-assets.pages.dev` (Cloudflare flattens at the apex)
+  - `CNAME` `www` → `ra19-digital-assets.pages.dev`
+  - Email records (`MX`, SPF/DKIM `TXT`) are **untouched** — see §8.
+- **HTTPS** is enforced; the certificate covers both hostnames. HSTS is sent via `_headers`
+  (`max-age=63072000; includeSubDomains; preload`).
 
-> **Gotcha:** if the GitHub Pages TLS certificate ever gets stuck (HTTPS fails with a
-> wrong-principal / `000` error), clear and re-add the custom domain to restart issuance:
-> `PUT .../pages -f cname=""` then `PUT .../pages -f cname=ra19digitalassets.com`. The cert
-> then moves `new → authorized → approved` and HTTPS starts working.
+> **Note:** the site moved from GitHub Pages to Cloudflare Pages. The old GitHub Pages DNS
+> (four `A` + four `AAAA` → `185.199.x.x`, `CNAME www → ra19store.github.io`) was replaced on
+> 2026-10-20. A JSON snapshot of the previous DNS is kept locally (not in the repo).
 
 ---
 
