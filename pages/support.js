@@ -5,7 +5,12 @@
     el.href = "mailto:" + STORE.brand.supportEmail;
     el.textContent = STORE.brand.supportEmail;
   });
-  document.getElementById("supportFaq").innerHTML = STORE.faq.map(function (item) {
-    return "<li><b>" + escapeHtml(item.q) + "</b> " + escapeHtml(item.a) + "</li>";
+
+  var faq = STORE.faq.map(function (item, i) {
+    return "<details" + (i === 0 ? " open" : "") + ">" +
+      "<summary>" + escapeHtml(item.q) + "</summary>" +
+      "<p>" + escapeHtml(item.a) + "</p>" +
+    "</details>";
   }).join("");
+  document.getElementById("supportFaq").innerHTML = faq;
 })();
